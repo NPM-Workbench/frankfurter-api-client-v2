@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "ES2022",
     "module": "NodeNext",
+    "types": ["jest"],
     "moduleResolution": "NodeNext",
     "esModuleInterop": true,
     "rootDir": "src",
@@ -13,5 +14,5 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src"]
+  "include": ["src"],
 }
