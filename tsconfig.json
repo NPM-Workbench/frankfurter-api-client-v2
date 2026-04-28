@@ -2,17 +2,23 @@
   "compilerOptions": {
     "target": "ES2022",
     "module": "NodeNext",
-    "types": ["jest"],
     "moduleResolution": "NodeNext",
+    "types": ["jest"],
     "esModuleInterop": true,
     "rootDir": "src",
     "outDir": "dist",
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
+    "isolatedModules": true,
     "strict": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
   "include": ["src"],
+  "exclude": [
+    "src/**/*.test.ts",
+    "src/**/tests/**",
+    "src/shared/create-msw-mock-server.ts"
+  ]
 }
