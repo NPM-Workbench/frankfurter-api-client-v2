@@ -17,8 +17,6 @@
   },
   "include": ["src"],
   "exclude": [
-    "src/**/*.test.ts",
-    "src/**/tests/**",
     "src/shared/create-msw-mock-server.ts"
   ]
 }
