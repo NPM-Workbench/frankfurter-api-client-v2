@@ -44,11 +44,11 @@ try {
 ```javascript
 import { getLatestRates } from 'frankfurter-api-client-v2';
 
-async function fetchLatestRates() {
+async function myFunc() {
   try {
     const response = await getLatestRates({
       base: 'EUR',
-      symbols: ['USD', 'INR'] /* symbols part in the input props is optional */,
+      quotes: ['USD', 'INR'] /* optional input. for specific currency codes. */,
     });
     console.log(response);
   } catch (error) {
@@ -56,7 +56,7 @@ async function fetchLatestRates() {
   }
 }
 /* call */
-await fetchLatestRates();
+await myFunc();
 
 /* Sample Response Schema: 200-OK
 [
@@ -77,12 +77,12 @@ await fetchLatestRates();
 ```javascript
 import { getHistoricalRatesForDate } from 'frankfurter-api-client-v2';
 
-async function fetchHistoricalRates() {
+async function myFunc() {
   try {
     const data = await getHistoricalRatesForDate({
       base: 'USD',
-      symbols: ['EUR', 'GBP'] /* symbols part in the input props is optional */,
-      date: '2023-10-12' /* YYYY-MM-DD format */,
+      period: { date: 1, month: 5, year: 2015 },
+      quotes: ['EUR', 'GBP'] /* optional input. for specific currency codes. */,
     });
     console.log(data);
   } catch (error) {
@@ -90,7 +90,7 @@ async function fetchHistoricalRates() {
   }
 }
 /* call */
-await fetchHistoricalRates();
+await myFunc();
 
 /* Sample Response Schema: 200-OK
 [
@@ -111,13 +111,13 @@ await fetchHistoricalRates();
 ```javascript
 import { getTimeSeriesRates } from 'frankfurter-api-client-v2';
 
-async function fetchTimeSeriesRates() {
+async function myFunc() {
   try {
     const data = await getTimeSeriesRates({
       base: 'EUR',
-      symbols: ['USD'] /* symbols part in the input props is optional */,
-      start: '2023-01-01' /* YYYY-MM-DD format */,
-      end: '2023-01-05' /* YYYY-MM-DD format */,
+      from: { date: 1, month: 1, year: 2025 },
+      to: { date: 5, month: 1, year: 2025 },
+      quotes: ['USD', 'THB'] /* optional input. for specific currency codes. */,
     });
     console.log(data);
   } catch (error) {
@@ -125,7 +125,7 @@ async function fetchTimeSeriesRates() {
   }
 }
 /* call */
-await fetchTimeSeriesRates();
+await myFunc();
 
 /* Sample Response Scheme: 200-OK
 [
@@ -146,7 +146,7 @@ await fetchTimeSeriesRates();
 ```javascript
 import { getSupportedCurrencies } from 'frankfurter-api-client-v2';
 
-async function fetchSupportedCurrencies() {
+async function myFunc() {
   try {
     const data = await getSupportedCurrencies(); /* no input props required */
     console.log(data);
@@ -155,7 +155,7 @@ async function fetchSupportedCurrencies() {
   }
 }
 /* call */
-await fetchSupportedCurrencies();
+await myFunc();
 
 /* Sample Response Schema: 200-OK
 [
@@ -178,10 +178,10 @@ await fetchSupportedCurrencies();
 ```javascript
 import { getCurrencyInfo } from 'frankfurter-api-client-v2';
 
-async function fetchCurrencyInfo() {
+async function myFunc() {
   try {
     const data = await getCurrencyInfo({
-      currency: 'USD' /* required - currency code */,
+      code: 'EUR' /* required - currency code */,
     });
     console.log(data);
   } catch (error) {
@@ -189,7 +189,7 @@ async function fetchCurrencyInfo() {
   }
 }
 /* call */
-await fetchCurrencyInfo();
+await myFunc();
 
 /* Sample Response Schema: 200-OK
 {
@@ -209,16 +209,16 @@ await fetchCurrencyInfo();
 ```javascript
 import { getAllProviders } from 'frankfurter-api-client-v2';
 
-async function fetchAllProviders() {
+async function myFunc() {
   try {
-    const data = await getAllProviders(); /* no input props required */
+    const data = await getAllProviders();
     console.log(data);
   } catch (error) {
     console.error('Failed to get all providers:', error.message);
   }
 }
 /* call */
-await fetchAllProviders();
+await myFunc();
 
 /*
 [
