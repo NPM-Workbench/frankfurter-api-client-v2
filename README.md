@@ -44,10 +44,19 @@ try {
 ```javascript
 import { getLatestRates } from 'frankfurter-api-client-v2';
 
-const response = await getLatestRates({
-  base: 'EUR',
-  symbols: ['USD', 'INR'] /* symbols part in the input props is optional */,
-});
+async function fetchLatestRates() {
+  try {
+    const response = await getLatestRates({
+      base: 'EUR',
+      symbols: ['USD', 'INR'] /* symbols part in the input props is optional */,
+    });
+    console.log(response);
+  } catch (error) {
+    console.error('Failed to get latest rates:', error.message);
+  }
+}
+/* call */
+await fetchLatestRates();
 
 /* Sample Response Schema: 200-OK
 [
@@ -57,13 +66,6 @@ const response = await getLatestRates({
     "quote": "AED",
     "rate": 4.2989
   },
-  {
-    "date": "2026-04-28",
-    "base": "EUR",
-    "quote": "AFN",
-    "rate": 75.35
-  },
-  ...
   ...
   ...
 ]
@@ -75,11 +77,20 @@ const response = await getLatestRates({
 ```javascript
 import { getHistoricalRatesForDate } from 'frankfurter-api-client-v2';
 
-const data = await getHistoricalRatesForDate({
-  base: 'USD',
-  symbols: ['EUR', 'GBP'] /* symbols part in the input props is optional */,
-  date: '2023-10-12' /* YYYY-MM-DD format */,
-});
+async function fetchHistoricalRates() {
+  try {
+    const data = await getHistoricalRatesForDate({
+      base: 'USD',
+      symbols: ['EUR', 'GBP'] /* symbols part in the input props is optional */,
+      date: '2023-10-12' /* YYYY-MM-DD format */,
+    });
+    console.log(data);
+  } catch (error) {
+    console.error('Failed to get historical rates:', error.message);
+  }
+}
+/* call */
+await fetchHistoricalRates();
 
 /* Sample Response Schema: 200-OK
 [
@@ -89,21 +100,8 @@ const data = await getHistoricalRatesForDate({
     "quote": "AED",
     "rate": 4.3151
   },
-  {
-    "date": "1999-01-04",
-    "base": "EUR",
-    "quote": "AFN",
-    "rate": 5600
-  },
-  {
-    "date": "1999-01-04",
-    "base": "EUR",
-    "quote": "ALL",
-    "rate": 162.06
-  },
-  ....
-  ....
-  ....
+  ...
+  ...
 ]
 */
 ```
@@ -113,12 +111,21 @@ const data = await getHistoricalRatesForDate({
 ```javascript
 import { getTimeSeriesRates } from 'frankfurter-api-client-v2';
 
-const data = await getTimeSeriesRates({
-  base: 'EUR',
-  symbols: ['USD'] /* symbols part in the input props is optional */,
-  start: '2023-01-01' /* YYYY-MM-DD format */,
-  end: '2023-01-05' /* YYYY-MM-DD format */,
-});
+async function fetchTimeSeriesRates() {
+  try {
+    const data = await getTimeSeriesRates({
+      base: 'EUR',
+      symbols: ['USD'] /* symbols part in the input props is optional */,
+      start: '2023-01-01' /* YYYY-MM-DD format */,
+      end: '2023-01-05' /* YYYY-MM-DD format */,
+    });
+    console.log(data);
+  } catch (error) {
+    console.error('Failed to get time series rates:', error.message);
+  }
+}
+/* call */
+await fetchTimeSeriesRates();
 
 /* Sample Response Scheme: 200-OK
 [
@@ -128,19 +135,6 @@ const data = await getTimeSeriesRates({
     "quote": "USD",
     "rate": 1.1751
   },
-  {
-    "date": "2026-01-02",
-    "base": "EUR",
-    "quote": "USD",
-    "rate": 1.1737
-  },
-  {
-    "date": "2026-01-03",
-    "base": "EUR",
-    "quote": "USD",
-    "rate": 1.1722
-  },
-  ...
   ...
   ...
 ]
@@ -151,7 +145,17 @@ const data = await getTimeSeriesRates({
 
 ```javascript
 import { getSupportedCurrencies } from 'frankfurter-api-client-v2';
-const data = await getSupportedCurrencies(); /* no input props required */
+
+async function fetchSupportedCurrencies() {
+  try {
+    const data = await getSupportedCurrencies(); /* no input props required */
+    console.log(data);
+  } catch (error) {
+    console.error('Failed to get supported currencies:', error.message);
+  }
+}
+/* call */
+await fetchSupportedCurrencies();
 
 /* Sample Response Schema: 200-OK
 [
@@ -163,15 +167,6 @@ const data = await getSupportedCurrencies(); /* no input props required */
     "start_date": "1949-12-21",
     "end_date": "2026-04-29"
   },
-  {
-    "iso_code": "INR",
-    "iso_numeric": "356",
-    "name": "Indian Rupee",
-    "symbol": "₹",
-    "start_date": "1994-03-01",
-    "end_date": "2026-04-29"
-  },
-  ...
   ...
   ...
 ]
@@ -183,9 +178,18 @@ const data = await getSupportedCurrencies(); /* no input props required */
 ```javascript
 import { getCurrencyInfo } from 'frankfurter-api-client-v2';
 
-const data = await getCurrencyInfo({
-  currency: 'USD' /* required - currency code */,
-});
+async function fetchCurrencyInfo() {
+  try {
+    const data = await getCurrencyInfo({
+      currency: 'USD' /* required - currency code */,
+    });
+    console.log(data);
+  } catch (error) {
+    console.error('Failed to get currency info:', error.message);
+  }
+}
+/* call */
+await fetchCurrencyInfo();
 
 /* Sample Response Schema: 200-OK
 {
@@ -205,7 +209,16 @@ const data = await getCurrencyInfo({
 ```javascript
 import { getAllProviders } from 'frankfurter-api-client-v2';
 
-const data = await getAllProviders(); /* no input props required */
+async function fetchAllProviders() {
+  try {
+    const data = await getAllProviders(); /* no input props required */
+    console.log(data);
+  } catch (error) {
+    console.error('Failed to get all providers:', error.message);
+  }
+}
+/* call */
+await fetchAllProviders();
 
 /*
 [
@@ -230,9 +243,8 @@ const data = await getAllProviders(); /* no input props required */
       "USD"
     ]
   },
-  ...,
-  ...,
-  ...,
+  ...
+  ...
 ]
 */
 ```
