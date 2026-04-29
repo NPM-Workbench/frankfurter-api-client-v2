@@ -8,7 +8,7 @@
 
 A lightweight, type-safe JavaScript/TypeScript client for the <b>Frankfurter Currency Exchange Rates API (Version 2)</b>, designed for developers who want clean abstractions, strong date validation, and a minimal API surface. This package wraps the Frankfurter API with strict input validation, predictable error handling, and zero runtime configuration.
 
-This is the <b>V2</b> version of the client, powered by the official [Frankfurter API V2](https://www.frankfurter.app/). No API Keys are required.
+This is the <b>V2</b> version of the client, powered by the official [Frankfurter API V2](https://frankfurter.dev/). No API Keys are required.
 
 ### 📦 Installation
 
