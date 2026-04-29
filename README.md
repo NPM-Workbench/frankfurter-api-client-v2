@@ -1,4 +1,4 @@
-![Banner](https://github.com/user-attachments/assets/005818f1-dcce-4976-b91e-ddf40a8a5d3b)
+![Banner](https://github.com/user-attachments/assets/83382ec3-d36d-4813-afca-a22f68e37591)
 ![npm](https://img.shields.io/npm/v/frankfurter-api-client-v2)
 ![downloads](https://img.shields.io/npm/dw/frankfurter-api-client-v2)
 ![license](https://img.shields.io/npm/l/frankfurter-api-client-v2)
