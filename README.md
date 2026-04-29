@@ -148,7 +148,9 @@ import { getSupportedCurrencies } from 'frankfurter-api-client-v2';
 
 async function myFunc() {
   try {
-    const data = await getSupportedCurrencies(); /* no input props required */
+    const data = await getSupportedCurrencies({
+      legacy: false,
+    }); /* if true, then gives legacy as well */
     console.log(data);
   } catch (error) {
     console.error('Failed to get supported currencies:', error.message);
