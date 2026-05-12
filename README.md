@@ -5,20 +5,17 @@
 ![license](https://img.shields.io/npm/l/frankfurter-api-client-v2)
 ![NPM Unpacked Size](https://img.shields.io/npm/unpacked-size/frankfurter-api-client-v2)
 
-# frankfurter-api-client-v2
-
+# frankfurter-api-client: v2
 A lightweight, type-safe JavaScript/TypeScript client for the <b>Frankfurter Currency Exchange Rates API (Version 2)</b>, designed for developers who want clean abstractions, strong date validation, and a minimal API surface. This package wraps the Frankfurter API with strict input validation, predictable error handling, and zero runtime configuration.
 
 This is the <b>V2</b> version of the client, powered by the official [Frankfurter API V2](https://frankfurter.dev/). No API Keys are required.
 
 ### 📦 Installation
-
 ```console
 npm install frankfurter-api-client-v2
 ```
 
 ### 📘 Features
-
 1. TypeScript-first with full type definitions
 2. Strict date validation (including leap years & future dates)
 3. Supports historical rates, time-series queries, currency info, and provider data
@@ -26,7 +23,6 @@ npm install frankfurter-api-client-v2
 5. Clean, promise-based API - Works in both Node.js and modern browsers
 
 ### 📕 Error Handling
-
 All functions in this package are async and may throw errors due to network issues, invalid input, or API errors. **Always wrap your calls in try-catch blocks** to handle errors gracefully:
 
 ```javascript
@@ -336,11 +332,15 @@ All files                       |   98.72 |    90.41 |     100 |   98.72 |
 --------------------------------|---------|----------|---------|---------|-------------------
 ```
 
-### 📘 Contributing
 
+### 🗂 Related NPM Packages
+1. Frankfurter API Client: V1: https://www.npmjs.com/package/frankfurter-api-client
+2. Frankfurter API Client: V2: https://www.npmjs.com/package/frankfurter-api-client-v2
+3. Frankfurter API Status Client: https://www.npmjs.com/package/frankfurter-api-status-client
+
+### 📘 Contributing
 Contributions, suggestions, and improvements are welcome.<br/>
 Feel free to open issues or pull requests.
 
 ### ❤️ Support
-
 Like this project? Support it with a github star, it would mean a lot to me! Cheers and Happy Coding.
