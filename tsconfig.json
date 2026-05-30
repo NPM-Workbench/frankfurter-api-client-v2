@@ -20,6 +20,7 @@
     "src/**/*.test.ts",
     "src/**/*.spec.ts",
     "src/**/test/**",
+    "src/**/tests/**",
     "src/**/__tests__/**",
     "src/shared/create-msw-mock-server.ts"
   ]
